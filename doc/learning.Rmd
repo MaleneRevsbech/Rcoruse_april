@@ -1,0 +1,31 @@
+---
+title: "Reproducible documents"
+author: "Malene"
+date: "4/21/2023"
+output: html_document
+---
+
+```{r setup}
+#| message: false
+#| warning: false 
+library(tidyverse)
+library(NHANES)
+names_small <- read.csv(here::here("data/nahnes_small.csv"))
+```
+
+```{r}
+nhanes_small
+```
+
+## Table of results
+```{r}
+nhanes_small %>% 
+    filter(!is.na(diabetes), !is.na(education)) %>% 
+    group_by(diabetes, education) %>% 
+    summarise(mean_age = mean(age, na.rm = T),
+              mean_bmi = mean(bmi, na.rm = T)
+              ) %>% 
+    ungroup() %>% 
+    knitr::kable(caption = "Mean values of Age and BMI for each education and diabetes status.")
+```
+
