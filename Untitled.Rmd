@@ -1,0 +1,25 @@
+---
+title: "Reprodicuble document"
+author: "Malene"
+date: "4/21/2023"
+output: html_document
+---
+
+# haløjsa
+
+hejsa med dig `r 2+2 `
+
+
+## Hej
+
+- item 1
+- item 2
+
+1. liste
+2. uha liste 
+
+Cute kitten in @fig-kitten-attack!
+![Kitten attacking flowers!](images/smiley.jpeg){#fig-kitten-attack width="50%" height="50%"}
+![Kitten attacking flowers!](images/smiley.jpeg){#fig-kitten-attack width="50%" height="50%"}
+
+flot billede hva @fig-kitten-attack
