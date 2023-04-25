@@ -1,8 +1,7 @@
 ---
 title: "Reproducible documents"
 author: "Malene"
-date: '2023-04-22'
-output: html_document
+format: docx
 ---
 
 ```{r setup}
@@ -28,7 +27,12 @@ nhanes_small %>%
     mean_bmi = mean(bmi, na.rm = TRUE)
   ) %>%
   ungroup() %>% 
-    knitr::kable(caption = "Mean values of Age and BMI for each education and diabetes status.")
+    knitr::kable(caption = "Mean value of Age and BMI for each education and diabetes status.")
 ```
 
-![Kitten attacking flowers!](images/smiley.jpeg){#fig-kitten-attack width="50%" height="50%"}
+Cute kitten in @fig-kitten-attack!
+
+![Kitten attacking flowers](images/kitten.jpg){#fig-kitten-attack width="50%" height="50%"}
+
+
+

@@ -1,25 +1,32 @@
 ---
 title: "Reproducible documents"
 author: "Malene"
-date: '2023-04-23'
-output: html_document
+format: docx
 ---
 
+## Table of results
+
+```{r}
+#| results: asis
+2 + 2
+```
+
+
 ```{r setup}
-#| message: false
-#| warning: false 
+#| results: asis
 library(tidyverse)
 library(NHANES)
 nhanes_small <- read_csv(here::here("data/nhanes_small.csv"))
 ```
 
 ```{r}
-nhanes_small 
+nhanes_small
 ```
 
 # Table of results
 
 ```{r mean-age-bmi-table}
+#| results: asis
 nhanes_small %>%
   filter(!is.na(diabetes), !is.na(education)) %>%
   group_by(diabetes, education) %>%
@@ -27,7 +34,12 @@ nhanes_small %>%
     mean_age = mean(age, na.rm = TRUE),
     mean_bmi = mean(bmi, na.rm = TRUE)
   ) %>%
-  ungroup() %>% 
-    knitr::kable(caption = "Mean values of Age and BMI for each education and diabetes status.")
+  ungroup() %>%
+  knitr::kable(caption = "Mean values of Age and BMI for each education and diabetes status.")
 ```
 
+Cute kitten in @fig-kitten-attack !
+
+![Kitten attacking flowers!](images/kitten.jpg){#fig-kitten-attack width="50%" height="50%"}
+
+lad mig se `r 2+2` 
